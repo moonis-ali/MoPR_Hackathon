@@ -1,4 +1,4 @@
-# MoPR_Hackathon
+# MoPR Hackathon Repository
 
 This repository provides a complete pipeline for processing LiDAR point cloud data, performing classification using RandLA-Net, generating Digital Terrain Models (DTMs), and conducting hydrological analysis for drainage network assessment.
 
@@ -27,6 +27,24 @@ Please ensure all dependencies (PyTorch, CUDA, etc.) are properly installed.
 
 ---
 
+## Download Pre-trained Model (Required)
+
+Before running classification, download the pre-trained model:
+
+https://iitk-my.sharepoint.com/:u:/g/personal/moonisali20_iitk_ac_in/IQBU27BkqBoxTZGtqK8AJ4yaAbg6nsPaUBPqKKwCjHmElNM?e=R38gZn
+
+Steps:
+
+1. Download the `.zip` file
+2. Extract the contents
+3. Place the extracted folder in:
+
+```bash
+data/saved_models/
+```
+
+---
+
 ## Workflow
 
 ### 1. Pre-processing (LAZ → PKL)
@@ -49,6 +67,7 @@ python test.py
 
 Ensure that:
 
+* Pre-trained model is placed in `data/saved_models/`
 * File paths are correctly specified
 * Model weights are properly loaded
 
@@ -128,6 +147,3 @@ This script performs:
 * Ensure coordinate systems are consistent across all processing steps.
 * Validate input/output paths before execution.
 * Large datasets may require significant memory and processing time.
-
----
-
