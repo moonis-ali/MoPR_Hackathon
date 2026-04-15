@@ -52,12 +52,12 @@ Each point cloud must be stored in a separate folder following a strict structur
 ```
 data/
 │
-├── pc_id=20/
+├── pc_id=1/
 │   ├── pc.pickle
 │   └── metadata/
 │       └── metadata.pickle
 │
-├── pc_id=30/
+├── pc_id=2/
 │   ├── pc.pickle
 │   └── metadata/
 │       └── metadata.pickle
