@@ -1,1 +1,133 @@
 # MoPR_Hackathon
+
+This repository provides a complete pipeline for processing LiDAR point cloud data, performing classification using RandLA-Net, generating Digital Terrain Models (DTMs), and conducting hydrological analysis for drainage network assessment.
+
+---
+
+## Overview
+
+The workflow includes:
+
+1. **Model Setup (RandLA-Net)**
+2. **Pre-processing of Point Cloud Data**
+3. **Point Cloud Classification**
+4. **Post-processing and Export**
+5. **DTM Generation (COG format)**
+6. **Hydrological Modelling & Drainage Analysis**
+
+---
+
+## Installation & Build
+
+The model setup and environment configuration should follow the official RandLA-Net PyTorch implementation:
+
+https://github.com/idsia-robotics/RandLA-Net-pytorch
+
+Please ensure all dependencies (PyTorch, CUDA, etc.) are properly installed.
+
+---
+
+## Workflow
+
+### 1. Pre-processing (LAZ → PKL)
+
+Convert raw `.laz` point cloud files into `.pkl` format required by the model:
+
+```bash
+python pc2pickle.py
+```
+
+---
+
+### 2. Classification
+
+Run the trained RandLA-Net model for classification:
+
+```bash
+python test.py
+```
+
+Ensure that:
+
+* File paths are correctly specified
+* Model weights are properly loaded
+
+---
+
+### 3. Post-processing (PKL → LAZ)
+
+Convert classified `.pkl` outputs back to `.laz` format:
+
+```bash
+python pickle2pc.py
+```
+
+---
+
+### Direct Processing (Recommended)
+
+You can skip intermediate steps and directly process `.laz` files:
+
+```bash
+python test_laz.py
+```
+
+This will:
+
+* Perform classification
+* Directly generate classified `.laz` output
+
+---
+
+### 4. DTM Generation (COG Format)
+
+Generate Digital Terrain Model (DTM) in Cloud Optimized GeoTIFF (COG) format:
+
+```bash
+python las2cog.py
+```
+
+---
+
+### 5. Hydrological Modelling
+
+Perform hydrological analysis and drainage network extraction:
+
+```bash
+python hydrological_modelling.py
+```
+
+This script performs:
+
+* Depression filling
+* Flow direction computation
+* Flow accumulation
+* Natural drainage network extraction
+* Overlay of streams on identified hotspots
+* Detection of unconnected hotspots
+* Proposal of alternate drainage network
+
+---
+
+## Required Resources
+
+* **Computing:** GPU-enabled system (recommended)
+* **Software Stack:**
+
+  * PyTorch
+  * GDAL
+  * WhiteboxTools
+  * CloudCompare
+  * QGIS
+* **Data:** High-resolution LiDAR point cloud datasets (`.laz`)
+
+---
+
+## Notes
+
+* Ensure coordinate systems are consistent across all processing steps.
+* Validate input/output paths before execution.
+* Large datasets may require significant memory and processing time.
+
+---
+
