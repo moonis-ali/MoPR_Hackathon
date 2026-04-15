@@ -45,6 +45,37 @@ data/saved_models/
 
 ---
 
+## Dataset Structure (Important)
+
+Each point cloud must be stored in a separate folder following a strict structure:
+
+```
+data/
+│
+├── pc_id=20/
+│   ├── pc.pickle
+│   └── metadata/
+│       └── metadata.pickle
+│
+├── pc_id=30/
+│   ├── pc.pickle
+│   └── metadata/
+│       └── metadata.pickle
+```
+
+### Requirements
+
+* Each folder must be named as:
+  `pc_id=<integer_id>`
+
+* Inside each folder:
+
+  * `pc.pickle` → contains the point cloud data
+  * `metadata/metadata.pickle` → contains metadata information
+
+
+---
+
 ## Workflow
 
 ### 1. Pre-processing (LAZ → PKL)
@@ -68,6 +99,7 @@ python test.py
 Ensure that:
 
 * Pre-trained model is placed in `data/saved_models/`
+* Dataset follows the required folder structure
 * File paths are correctly specified
 * Model weights are properly loaded
 
@@ -145,5 +177,7 @@ This script performs:
 ## Notes
 
 * Ensure coordinate systems are consistent across all processing steps.
-* Validate input/output paths before execution.
+* Strictly follow dataset structure to avoid runtime errors.
 * Large datasets may require significant memory and processing time.
+
+---
