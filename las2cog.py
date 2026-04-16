@@ -9,9 +9,9 @@ from scipy.spatial import ConvexHull
 from matplotlib.path import Path
 
 # ================== INPUT ==================
-input_laz = "predicted_whole.laz"
-output_cog = "dem_cog.tif"
-resolution = 0.5
+input_laz = "classified_pc.laz"
+output_cog = "DTM.tif"
+resolution = 5
 nodata = -9999
 
 # ================== READ LAZ ==================
