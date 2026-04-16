@@ -11,7 +11,7 @@ PC_PATH = "data/pc_id=2/"
 SEG_NAME = "example"
 
 OUTPUT_DIR = os.path.join(MODEL_PATH, "output/segmentations", SEG_NAME)
-OUTPUT_LAS = os.path.join(OUTPUT_DIR, "predicted_whole.laz")
+OUTPUT_LAS = os.path.join(OUTPUT_DIR, "classified_pc.laz")
 
 # ================== STEP 1: RUN SEGMENTATION ==================
 print("Running RandLA-Net segmentation...")
