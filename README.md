@@ -157,6 +157,7 @@ This script performs:
 * Overlay of streams on identified hotspots
 * Detection of unconnected hotspots
 * Proposal of alternate drainage network
+* Save all layers in folder "outputs"
 
 ---
 
