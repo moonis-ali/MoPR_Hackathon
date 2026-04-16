@@ -168,7 +168,7 @@ You can visualise each layer before saving as output during hydrological analysi
 python waterlogging_with_visualisation.py
 ```
 
-You can alternatively run waterlogging.ipynb on Google Colab or Jupyter Notebook to understand and visualise each layer at different steps of the hydrological analysis.
+waterlogging.ipynb is also provided, which you can run in Google Colab or Jupyter Notebook to understand and visualise each layer at different steps of the hydrological analysis.
 
 ---
 
