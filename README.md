@@ -115,7 +115,7 @@ python pickle2pc.py
 
 ---
 
-### Direct Processing (Recommended)
+### Alternative: Direct Processing (Recommended)
 
 You can skip intermediate steps and directly process `.laz` files:
 
@@ -145,7 +145,7 @@ python las2cog.py
 Perform hydrological analysis and drainage network extraction:
 
 ```bash
-python hydrological_modelling.py
+python waterlogging.py
 ```
 
 This script performs:
@@ -157,6 +157,18 @@ This script performs:
 * Overlay of streams on identified hotspots
 * Detection of unconnected hotspots
 * Proposal of alternate drainage network
+
+---
+
+### Alternative: Hydrological Modelling with Visualisation (Recommended)
+
+You can visualise each layer before saving as output during hydrological analysis and drainage network extraction:
+
+```bash
+python waterlogging_with_visualisation.py
+```
+
+You can alternatively run waterlogging.ipynb on Google Colab or Jupyter Notebook to understand and visualise each layer at different steps of the hydrological analysis.
 
 ---
 
